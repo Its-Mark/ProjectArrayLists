@@ -14,8 +14,8 @@ public class Deck {
   public void removeCard(Card c){
     deck.remove(c);
   }
-  public void getCard(){
-
+  public Card getCard(int i){
+    return deck.get(i);
   }
 
   public int getDeckSize(){

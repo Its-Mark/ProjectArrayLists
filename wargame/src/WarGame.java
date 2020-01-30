@@ -18,15 +18,15 @@ public class WarGame {
         }//end cardRanking for loop
       } //end suit for loop
     }//end while loop
-    Collections.shuffle(cardDeck.);
+    //Collections.shuffle(cardDeck);
     return cardDeck;
   }
 
   public Deck makePlayerHand(Deck d){
     Deck PlayerDeck = new Deck();
     for(int i = 0; i < 26; i++) {
-      PlayerDeck.addCard(d.get(0));
-      d.removeCard(d.get(0));
+      PlayerDeck.addCard(d.getCard(i));
+      d.removeCard(d.getCard(i));
     }
     return PlayerDeck;
   }
@@ -45,9 +45,9 @@ public class WarGame {
       numofPlayer1Cards -= 1;
   }
 
-  public void bigCompare(){
+  /*public void bigCompare(){
 
-  }
+  }*/
 
   public static void main(String [] args) {
     Deck deck = makeMasterDeck();
@@ -55,10 +55,10 @@ public class WarGame {
     numofPlayer1Cards = 26;
     numofPlayer2Cards = 26;
     Player2Deck = makePlayerHand(deck);
-    Card cardInPlay1 = Player1Deck.get(0);
-    Card cardInPlay2 = Player2Deck.get(0);
+    Card cardInPlay1 = Player1Deck.getCard(0);
+    Card cardInPlay2 = Player2Deck.getCard(0);
     System.out.println("Cards have been shuffled. Hands have been made. Begin.");
-    while (numofPlayer1Cards > 0) and (numofPlayer2Cards > 0) {
+    while (numofPlayer1Cards > 0 && numofPlayer2Cards > 0) {
       System.out.println("Player 1 plays a " + cardInPlay1);
       System.out.println("Player 2 plays a " + cardInPlay2);
       mainCompare(cardInPlay1, cardInPlay2);
