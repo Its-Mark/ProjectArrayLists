@@ -18,6 +18,12 @@ public class Deck {
     return deck.get(i);
   }
 
+  public void swapCards(Card c1, Card c2, int num1, int num2){
+    deck.set(num1, c2);
+    deck.set(num2, c1);
+  }
+
+
   public int getDeckSize(){
     return deck.size();
   }
