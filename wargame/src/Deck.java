@@ -14,7 +14,7 @@ public class Deck {
   public void removeCard(Card c){
     deck.remove(c);
   }
-  public Card getCard(int i){
+  public Card getCard(int i) throws IndexOutOfBoundsException{
     return deck.get(i);
   }
 
@@ -30,9 +30,9 @@ public class Deck {
 
   @Override
   public String toString(){
-    String s = "This player has:";
+    String s = "This player has: ";
     for(Card c : deck){
-      s += c.toString();
+      s += c.toString() + ",";
     }//end for loop
     return s;
   }//end toString

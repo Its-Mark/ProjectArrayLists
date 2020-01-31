@@ -32,10 +32,10 @@ public class Card {
         else if (ranking == 11){card.append("Jack");}
         else {card.append(ranking);}
         card.append(" of ");
-        if(ranking == 0){card.append("Clubs");}
-        else if (ranking == 1) {card.append("Spades");}
-        else if (ranking == 2) {card.append("Hearts");}
-        else if (ranking == 3) {card.append("Diamonds");}
+        if(suit == 0){card.append("Clubs ");}
+        else if (suit == 1) {card.append("Spades");}
+        else if (suit == 2) {card.append("Hearts");}
+        else if (suit == 3) {card.append("Diamonds");}
 
         return card.toString();
     }

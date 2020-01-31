@@ -2,10 +2,8 @@ import java.util.Collections;
 import java.util.Random;
 
 public class WarGame {
-  private static int numofPlayer1Cards;
-  private static int numofPlayer2Cards;
-  private static Deck Player2Deck;
-  private static Deck Player1Deck;
+  private static Deck player2Deck;
+  private static Deck player1Deck;
 
   public static Deck makeMasterDeck() {
     Deck cardDeck = new Deck();
@@ -42,25 +40,23 @@ public class WarGame {
 
   public static Deck makePlayerHand(Deck d){
     Deck PlayerDeck = new Deck();
-    for(int i = 0; i < 26; i++) {
-      PlayerDeck.addCard(d.getCard(i));
-      d.removeCard(d.getCard(i));
+    while (PlayerDeck.getDeckSize() != 26) {
+      for (int i = 0; i < d.getDeckSize()-1 ; i++) {
+        PlayerDeck.addCard(d.getCard(i));
+        d.removeCard(d.getCard(i));
+      }
     }
     return PlayerDeck;
   }
 
   public static void mainCompare(Card c1, Card c2) {
     if (c1.getRank() > c2.getRank()) {
-      Player1Deck.addCard(c1);
-      Player1Deck.addCard(c2);
-      numofPlayer1Cards += 1;
-      numofPlayer2Cards -= 1;
+      player1Deck.addCard(c1);
+      player1Deck.addCard(c2);
     }
     else {
-      Player2Deck.addCard(c1);
-      Player2Deck.addCard(c2);
-      numofPlayer2Cards += 1;
-      numofPlayer1Cards -= 1;
+      player2Deck.addCard(c1);
+      player2Deck.addCard(c2);
     }
   }
 
@@ -69,21 +65,21 @@ public class WarGame {
   }*/
 
   public static void main (String [] args) {
-    Deck deck = makeMasterDeck();
-    shuffle(deck);
-    Player1Deck = makePlayerHand(deck);
-    numofPlayer1Cards = 26;
-    numofPlayer2Cards = 26;
-    Player2Deck = makePlayerHand(deck);
-    Card cardInPlay1 = Player1Deck.getCard(0);
-    Card cardInPlay2 = Player2Deck.getCard(0);
-    System.out.println("Cards have been shuffled. Hands have been made. Begin.");
-    while (numofPlayer1Cards > 0 && numofPlayer2Cards > 0) {
-      System.out.println("Player 1 plays a " + cardInPlay1);
-      System.out.println("Player 2 plays a " + cardInPlay2);
-      mainCompare(cardInPlay1, cardInPlay2);
-    }
-    if (numofPlayer1Cards == 0) {System.out.println("Player 2 Wins!");}
-    else {System.out.println("Player 1 Wins!");}
+    Deck masterDeck = makeMasterDeck();
+    shuffle(masterDeck);
+    player1Deck = makePlayerHand(masterDeck);
+    player2Deck = makePlayerHand(masterDeck);
+    System.out.println(player1Deck);
+    //Card cardInPlay1 = player1Deck.getCard(0);
+    //Card cardInPlay2 = player2Deck.getCard(0);
+    //System.out.println(player1Deck.toString());
+    //System.out.print(player2Deck.toString());
+//    while (player1Deck.getDeckSize() > 0 && player2Deck.getDeckSize() > 0) {
+//      System.out.println("Player 1 plays a " + cardInPlay1);
+//      System.out.println("Player 2 plays a " + cardInPlay2);
+//      mainCompare(cardInPlay1, cardInPlay2);
+//    }
+//    if (player1Deck.getDeckSize() == 0) {System.out.println("Player 2 Wins!");}
+//    else {System.out.println("Player 1 Wins!");}
   }
 }
