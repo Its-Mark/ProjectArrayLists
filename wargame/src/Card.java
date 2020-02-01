@@ -16,10 +16,10 @@ public class Card {
 
     public String getSuit(){
         String suitName = "";
-        if(ranking == 0){suitName = "Clubs";}
-        else if (ranking == 1) {suitName = "Spades";}
-        else if (ranking == 2) {suitName = "Hearts";}
-        else if (ranking == 3) {suitName = "Diamonds";}
+        if(suit == 0){suitName = "Clubs";}
+        else if (suit == 1) {suitName = "Spades";}
+        else if (suit == 2) {suitName = "Hearts";}
+        else if (suit == 3) {suitName = "Diamonds";}
         return suitName;
     }
 

@@ -2,7 +2,6 @@ import java.util.Collections;
 import java.util.ArrayList;
 
 public class Deck {
-  private int deckSize;
   private ArrayList<Card> deck;
 
   public Deck() {
@@ -11,8 +10,8 @@ public class Deck {
   public void addCard(Card c){
     deck.add(c);
   }
-  public void removeCard(Card c){
-    deck.remove(c);
+  public void removeCard(int i){
+    deck.remove(i);
   }
   public Card getCard(int i) throws IndexOutOfBoundsException{
     return deck.get(i);
@@ -22,7 +21,6 @@ public class Deck {
     deck.set(num1, c2);
     deck.set(num2, c1);
   }
-
 
   public int getDeckSize(){
     return deck.size();
