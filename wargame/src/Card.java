@@ -12,6 +12,14 @@ public class Card {
     private int suit; // 0-3 Clubs Spades Hearts Diamonds
 
     /**
+     * Default constructor.
+     * Will never be used because there is no "blank" card in a deck of 52 cards
+     */
+    public Card(){
+        this.suit = -1;
+        this.ranking = -1;
+    }
+    /**
      * Creates a Card with a suit(0-3) and a rank (2-14)
      * @param s int of suit
      * @param r int of rank
