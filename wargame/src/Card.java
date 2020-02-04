@@ -1,5 +1,12 @@
 import java.lang.StringBuffer;
 
+/**
+ * CECS 277 Project ArrayLists
+ * @author Mark Garcia
+ *         mark.garcia01@student.csulb.edu
+ * @author Brandon Wiitanen
+ *
+ */
 public class Card {
     private int ranking; // 2-10, Jack (11), Queen (12), King (13), Ace (either 1 or 14 depending on the game being played.)
     private int suit; // 0-3 Clubs Spades Hearts Diamonds

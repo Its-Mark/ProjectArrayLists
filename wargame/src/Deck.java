@@ -1,6 +1,13 @@
 import java.util.Collections;
 import java.util.ArrayList;
 
+/**
+ * CECS 277 Project ArrayLists
+ * @author Mark Garcia
+ *         mark.garcia01@student.csulb.edu
+ * @author Brandon Wiitanen
+ *
+ */
 public class Deck {
   private ArrayList<Card> deck;
 

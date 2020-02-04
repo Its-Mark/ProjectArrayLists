@@ -3,6 +3,13 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 
+/**
+ * CECS 277 Project ArrayLists
+ * @author Mark Garcia
+ *         mark.garcia01@student.csulb.edu
+ * @author Brandon Wiitanen
+ *
+ */
 public class WarGame {
   private static Deck player2Deck;
   private static Deck player1Deck;
@@ -57,24 +64,25 @@ public class WarGame {
       for (int i = 0; i < d.getDeckSize()-1 ; i++) {
         PlayerDeck.addCard(d.getCard(i));
         d.removeCard(i);
-      }
-    }
+      }//end for loop
+    }//end while loop
     return PlayerDeck;
   }
 
   public static void main (String [] args) {
+    boolean gameRunning = true;
     Deck masterDeck = makeMasterDeck();
     shuffle(masterDeck);
     player1Deck = makePlayerHand(masterDeck);
     player2Deck = masterDeck;
-    while(player1Deck.getDeckSize() != 0 && player2Deck.getDeckSize() != 0){
+    while(gameRunning){
       for (int i = 0; i < player1Deck.getDeckSize(); i++){
         if (player1Deck.getDeckSize() == 0){
           System.out.println("Player 2 wins the game!");
-          System.exit(0);
+          gameRunning = false;
         } else if (player2Deck.getDeckSize() == 0){
           System.out.println("Player 1 wins the game!");
-          System.exit(0);
+          gameRunning = false;
         } else { // both players have enough cards to play
           System.out.println("Player 1 plays a " + player1Deck.getCard(i).toString().stripTrailing());
           System.out.println("Player 2 plays a " + player2Deck.getCard(i).toString().stripTrailing());
